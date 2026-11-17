@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"],
+  "ignoreFiles": ["!src/**", "build/**"],
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "no-empty-source": null,
+    "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.{css,scss}"],
+      "rules": {
+        "selector-class-pattern": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "files.eol": "\n",
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.format.enable": true,
+  "stylelint.validate": ["css", "scss"],
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "prettier.prettierPath": "./node_modules/prettier/index.mjs"
+}
