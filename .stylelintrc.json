@@ -3,15 +3,13 @@
   "ignoreFiles": ["!src/**", "build/**"],
   "rules": {
     "at-rule-empty-line-before": null,
+    "custom-property-empty-line-before": [
+      "always",
+      { "ignore": ["after-custom-property", "after-comment", "inside-single-line-block"] }
+    ],
     "no-empty-source": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }]
-  },
-  "overrides": [
-    {
-      "files": ["src/**/*.{css,scss}"],
-      "rules": {
-        "selector-class-pattern": null
-      }
-    }
-  ]
+  }
 }

@@ -1,0 +1,104 @@
+@use "tokens" as *;
+
+:root {
+  color-scheme: light;
+
+  --lipress-font-family-body: #{$font-family-body};
+  --lipress-font-family-code: #{$font-family-code};
+
+  --lipress-font-size-body: #{$font-size-body};
+  --lipress-font-size-nav: #{$font-size-nav};
+  --lipress-font-size-toc: #{$font-size-toc};
+  --lipress-font-size-code: #{$font-size-code};
+  --lipress-font-size-brand: #{$font-size-brand};
+  --lipress-font-size-control: #{$font-size-control};
+  --lipress-font-size-caption: #{$font-size-caption};
+
+  --lipress-font-size-heading-1: #{$font-size-heading-1};
+  --lipress-font-size-heading-2: #{$font-size-heading-2};
+  --lipress-font-size-heading-3: #{$font-size-heading-3};
+  --lipress-font-size-heading-4: #{$font-size-heading-4};
+  --lipress-font-size-heading-5: #{$font-size-heading-5};
+  --lipress-font-size-heading-6: #{$font-size-heading-6};
+
+  --lipress-font-weight-body: #{$font-weight-body};
+  --lipress-font-weight-brand: #{$font-weight-brand};
+  --lipress-font-weight-control: #{$font-weight-control};
+  --lipress-font-weight-caption: #{$font-weight-caption};
+  --lipress-font-weight-heading: #{$font-weight-heading};
+  --lipress-font-weight-emphasize: #{$font-weight-emphasize};
+
+  --lipress-line-height-body: #{$line-height-body};
+  --lipress-line-height-nav: #{$line-height-nav};
+  --lipress-line-height-toc: #{$line-height-toc};
+  --lipress-line-height-code: #{$line-height-code};
+  --lipress-line-height-brand: #{$line-height-brand};
+  --lipress-line-height-control: #{$line-height-control};
+  --lipress-line-height-caption: #{$line-height-caption};
+  --lipress-line-height-heading-1: #{$line-height-heading-1};
+  --lipress-line-height-heading-n: #{$line-height-heading-n};
+
+  --lipress-letter-spacing-brand: #{$letter-spacing-brand};
+  --lipress-letter-spacing-caption: #{$letter-spacing-caption};
+  --lipress-letter-spacing-heading-1: #{$letter-spacing-heading-1};
+  --lipress-letter-spacing-heading-2: #{$letter-spacing-heading-2};
+
+  --lipress-icon-size-logo: #{$icon-size-logo};
+  --lipress-icon-size-control: #{$icon-size-control};
+
+  --lipress-background-color-page: #{$background-color-page};
+  --lipress-background-color-header: #{$background-color-header};
+  --lipress-background-color-sidebar: #{$background-color-sidebar};
+  --lipress-background-color-inset: #{$background-color-inset};
+  --lipress-background-color-surface: #{$background-color-surface};
+  --lipress-background-color-hover: #{$background-color-hover};
+  --lipress-background-color-active: #{$background-color-active};
+  --lipress-background-color-backdrop: #{$background-color-backdrop};
+
+  --lipress-text-color: #{$text-color};
+  --lipress-text-color-secondary: #{$text-color-secondary};
+  --lipress-text-color-placeholder: #{$text-color-placeholder};
+
+  --lipress-border-color-gutter: #{$border-color-gutter};
+  --lipress-border-color-border: #{$border-color-border};
+
+  --lipress-shadow-1: #{$shadow-1};
+  --lipress-shadow-2: #{$shadow-2};
+  --lipress-shadow-3: #{$shadow-3};
+
+  --lipress-accent-color: #{$accent-color};
+  --lipress-accent-contrast-color: #{$accent-contrast-color};
+  --lipress-accent-background-color: #{$accent-background-color};
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --lipress-background-color-page: #{$dark-background-color-page};
+  --lipress-background-color-header: #{$dark-background-color-header};
+  --lipress-background-color-sidebar: #{$dark-background-color-sidebar};
+  --lipress-background-color-inset: #{$dark-background-color-inset};
+  --lipress-background-color-surface: #{$dark-background-color-surface};
+  --lipress-background-color-hover: #{$dark-background-color-hover};
+  --lipress-background-color-active: #{$dark-background-color-active};
+  --lipress-background-color-backdrop: #{$dark-background-color-backdrop};
+
+  --lipress-text-color: #{$dark-text-color};
+  --lipress-text-color-secondary: #{$dark-text-color-secondary};
+  --lipress-text-color-placeholder: #{$dark-text-color-placeholder};
+
+  --lipress-border-color-gutter: #{$dark-border-color-gutter};
+  --lipress-border-color-border: #{$dark-border-color-border};
+
+  --lipress-shadow-1: #{$dark-shadow-1};
+  --lipress-shadow-2: #{$dark-shadow-2};
+  --lipress-shadow-3: #{$dark-shadow-3};
+
+  --lipress-accent-color: #{$dark-accent-color};
+  --lipress-accent-contrast-color: #{$dark-accent-contrast-color};
+  --lipress-accent-background-color: #{$dark-accent-background-color};
+}
+
+body {
+  margin: 0;
+}

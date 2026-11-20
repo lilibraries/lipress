@@ -1,0 +1,117 @@
+$font-family-body:
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  "Roboto",
+  "Helvetica Neue",
+  "Noto Sans",
+  "Liberation Sans",
+  "Arial",
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji" !default;
+$font-family-code:
+  ui-monospace, "SFMono-Regular", "SF Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono",
+  "DejaVu Sans Mono", monospace !default;
+
+$font-size-body: 1rem !default;
+$font-size-nav: 0.875rem !default;
+$font-size-toc: 0.875rem !default;
+$font-size-code: 0.875rem !default;
+$font-size-brand: 1rem !default;
+$font-size-control: 0.875rem !default;
+$font-size-caption: 0.75rem !default;
+
+$icon-size-logo: 1.75rem !default;
+$icon-size-control: 1rem !default;
+
+$font-size-heading-1: clamp(2rem, 1.75rem + 1vw, 2.25rem) !default;
+$font-size-heading-2: 1.5rem !default;
+$font-size-heading-3: 1.25rem !default;
+$font-size-heading-4: 1rem !default;
+$font-size-heading-5: 0.875rem !default;
+$font-size-heading-6: 0.8125rem !default;
+
+$font-weight-body: 400 !default;
+$font-weight-brand: 600 !default;
+$font-weight-control: 500 !default;
+$font-weight-caption: 500 !default;
+$font-weight-heading: 600 !default;
+$font-weight-emphasize: 600 !default;
+
+$line-height-body: 1.75 !default;
+$line-height-nav: 1.428 !default;
+$line-height-toc: 1.428 !default;
+$line-height-code: 1.714 !default;
+$line-height-brand: $icon-size-logo !default;
+$line-height-control: $icon-size-control !default;
+$line-height-caption: 1.5 !default;
+$line-height-heading-1: 1.2 !default;
+$line-height-heading-n: 1.25 !default;
+
+$letter-spacing-brand: -0.01em !default;
+$letter-spacing-caption: 0.025em !default;
+$letter-spacing-heading-1: -0.02em !default;
+$letter-spacing-heading-2: -0.01em !default;
+
+$background-color-page: #fff !default;
+$background-color-header: #fff !default;
+$background-color-sidebar: #f7f7f7 !default;
+$background-color-inset: #f7f7f7 !default;
+$background-color-surface: #fff !default;
+$background-color-hover: rgb(0 0 0 / 8%) !default;
+$background-color-active: rgb(0 0 0 / 12%) !default;
+$background-color-backdrop: rgb(0 0 0 / 48%) !default;
+
+$text-color: #242424 !default;
+$text-color-secondary: #525252 !default;
+$text-color-placeholder: #6e6e6e !default;
+
+$border-color-gutter: rgb(0 0 0 / 10%) !default;
+$border-color-border: rgb(0 0 0 / 6%) !default;
+
+$shadow-1:
+  0 1px 3px rgb(0 0 0 / 10%),
+  0 1px 2px -1px rgb(0 0 0 / 10%) !default;
+$shadow-2:
+  0 4px 8px -2px rgb(0 0 0 / 12%),
+  0 12px 24px -8px rgb(0 0 0 / 12%) !default;
+$shadow-3:
+  0 8px 16px -6px rgb(0 0 0 / 14%),
+  0 24px 48px -12px rgb(0 0 0 / 20%) !default;
+
+$accent-color: #0c62cd !default;
+$accent-contrast-color: #fbfdff !default;
+$accent-background-color: rgb(12 98 205 / 10%) !default;
+
+$dark-background-color-page: #171717 !default;
+$dark-background-color-header: #171717 !default;
+$dark-background-color-sidebar: #1f1f1f !default;
+$dark-background-color-inset: #1f1f1f !default;
+$dark-background-color-surface: #292929 !default;
+$dark-background-color-hover: rgb(255 255 255 / 8%) !default;
+$dark-background-color-active: rgb(255 255 255 / 12%) !default;
+$dark-background-color-backdrop: rgb(0 0 0 / 64%) !default;
+
+$dark-text-color: #ededed !default;
+$dark-text-color-secondary: #bdbdbd !default;
+$dark-text-color-placeholder: #9e9e9e !default;
+
+$dark-border-color-gutter: #000 !default;
+$dark-border-color-border: rgb(255 255 255 / 6%) !default;
+
+$dark-shadow-1:
+  0 1px 3px rgb(0 0 0 / 48%),
+  0 1px 2px -1px rgb(0 0 0 / 40%) !default;
+$dark-shadow-2:
+  0 4px 8px rgb(0 0 0 / 56%),
+  0 12px 24px -8px rgb(0 0 0 / 44%) !default;
+$dark-shadow-3:
+  0 8px 16px rgb(0 0 0 / 64%),
+  0 24px 48px -12px rgb(0 0 0 / 56%) !default;
+
+$dark-accent-color: #5c9eff !default;
+$dark-accent-contrast-color: #071424 !default;
+$dark-accent-background-color: rgb(92 158 255 / 16%) !default;
