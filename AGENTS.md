@@ -26,7 +26,6 @@ Lipress is an out-of-the-box documentation tool built on Vite: point it at a doc
 - Keep style files as close as possible to the components they style; split style files as needed.
 - Reuse the existing tokens in `src/client/styles/_tokens.scss` and avoid adding new ones; a one-off value belongs inline in the rule that uses it rather than in a new token.
 - If a new token is unavoidable, propose the most fitting name and value and wait for the user to confirm before adding it.
-- Do not pollute global styles: outside `lipress-*` classes, allow only the `body` `margin`, `color-scheme` on `:root`, third-party stylesheet imports, and namespaced custom properties (`--lipress-*`).
 - Published source must not depend on repository files outside the published source tree, such as tests, docs, or build scripts.
 - Public APIs other than components and their props types must have accurate JSDoc describing their purpose, inputs, and outputs, with `@param` and `@returns` where applicable. Component comments describe only the component's purpose; add comments to prop fields only where necessary, and do not document component parameters, return values, or props object types.
 - Except for API documentation, keep comments concise and accurate: comment only where necessary, never on self-evident logic. Write comments, JSDoc, test titles and descriptions, and directive explanations in English; write documentation in English by default, and use the target language when the documentation targets a specific one.
@@ -42,7 +41,8 @@ Lipress is an out-of-the-box documentation tool built on Vite: point it at a doc
 ## Testing
 
 - Tests are not colocated: `tests/cli` and `tests/client` mirror their source areas, and Jest collects `tests/**/*.test.(ts|tsx)` in `jsdom` by default.
-- Tests for lifecycle-dependent behavior must cover cleanup on unmount and StrictMode idempotency.
+- Components under `src/client` (including `Root`) get only a simple rendering smoke test that verifies they render; do not add complex interaction, style, lifecycle, edge-case, or prop-combination tests. This limit does not apply to non-component logic such as entry initialization and utility functions.
+- Tests for lifecycle-dependent behavior must cover cleanup on unmount and StrictMode idempotency, except the component tests under `src/client`, which still only verify normal rendering.
 - Test SSR-specific behavior in a Node environment, explicitly selected with `/** @jest-environment node */` unless the test configuration already selects it.
 - Do not suppress unhandled promise rejections without a specific, justified reason.
 
