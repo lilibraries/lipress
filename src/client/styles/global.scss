@@ -3,6 +3,13 @@
 :root {
   color-scheme: light;
 
+  --lipress-layout-max-width: #{$layout-max-width};
+  --lipress-layout-wide-max-width: #{$layout-wide-max-width};
+
+  --lipress-layout-header-height: #{$layout-header-height};
+  --lipress-layout-sidebar-width: #{$layout-sidebar-width};
+  --lipress-layout-toc-width: #{$layout-toc-width};
+
   --lipress-font-family-body: #{$font-family-body};
   --lipress-font-family-code: #{$font-family-code};
 
@@ -46,8 +53,9 @@
   --lipress-icon-size-logo: #{$icon-size-logo};
   --lipress-icon-size-control: #{$icon-size-control};
 
-  --lipress-background-color-page: #{$background-color-page};
+  --lipress-background-color-body: #{$background-color-body};
   --lipress-background-color-header: #{$background-color-header};
+  --lipress-background-color-footer: #{$background-color-footer};
   --lipress-background-color-sidebar: #{$background-color-sidebar};
   --lipress-background-color-inset: #{$background-color-inset};
   --lipress-background-color-surface: #{$background-color-surface};
@@ -59,8 +67,9 @@
   --lipress-text-color-secondary: #{$text-color-secondary};
   --lipress-text-color-placeholder: #{$text-color-placeholder};
 
-  --lipress-border-color-gutter: #{$border-color-gutter};
-  --lipress-border-color-border: #{$border-color-border};
+  --lipress-border-color: #{$border-color};
+  --lipress-border-color-layout: #{$border-color-layout};
+  --lipress-border-color-scrollbar: #{$border-color-scrollbar};
 
   --lipress-shadow-1: #{$shadow-1};
   --lipress-shadow-2: #{$shadow-2};
@@ -74,8 +83,9 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --lipress-background-color-page: #{$dark-background-color-page};
+  --lipress-background-color-body: #{$dark-background-color-body};
   --lipress-background-color-header: #{$dark-background-color-header};
+  --lipress-background-color-footer: #{$dark-background-color-footer};
   --lipress-background-color-sidebar: #{$dark-background-color-sidebar};
   --lipress-background-color-inset: #{$dark-background-color-inset};
   --lipress-background-color-surface: #{$dark-background-color-surface};
@@ -87,8 +97,9 @@
   --lipress-text-color-secondary: #{$dark-text-color-secondary};
   --lipress-text-color-placeholder: #{$dark-text-color-placeholder};
 
-  --lipress-border-color-gutter: #{$dark-border-color-gutter};
-  --lipress-border-color-border: #{$dark-border-color-border};
+  --lipress-border-color: #{$dark-border-color};
+  --lipress-border-color-layout: #{$dark-border-color-layout};
+  --lipress-border-color-scrollbar: #{$dark-border-color-scrollbar};
 
   --lipress-shadow-1: #{$dark-shadow-1};
   --lipress-shadow-2: #{$dark-shadow-2};
@@ -101,4 +112,12 @@
 
 body {
   margin: 0;
+  overflow-y: scroll;
+  font-family: var(--lipress-font-family-body);
+  font-size: var(--lipress-font-size-body);
+  font-weight: var(--lipress-font-weight-body);
+  line-height: var(--lipress-line-height-body);
+  color: var(--lipress-text-color);
+  background-color: var(--lipress-background-color-body);
+  -webkit-font-smoothing: antialiased;
 }

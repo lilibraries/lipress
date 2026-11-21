@@ -1,3 +1,10 @@
+$layout-max-width: 1440px !default;
+$layout-wide-max-width: 1680px !default;
+
+$layout-header-height: 65px !default;
+$layout-sidebar-width: 256px !default;
+$layout-toc-width: 256px !default;
+
 $font-family-body:
   system-ui,
   -apple-system,
@@ -56,9 +63,10 @@ $letter-spacing-caption: 0.025em !default;
 $letter-spacing-heading-1: -0.02em !default;
 $letter-spacing-heading-2: -0.01em !default;
 
-$background-color-page: #fff !default;
+$background-color-body: #fff !default;
 $background-color-header: #fff !default;
-$background-color-sidebar: #f7f7f7 !default;
+$background-color-footer: #f7f7f7 !default;
+$background-color-sidebar: #fff !default;
 $background-color-inset: #f7f7f7 !default;
 $background-color-surface: #fff !default;
 $background-color-hover: rgb(0 0 0 / 8%) !default;
@@ -69,8 +77,9 @@ $text-color: #242424 !default;
 $text-color-secondary: #525252 !default;
 $text-color-placeholder: #6e6e6e !default;
 
-$border-color-gutter: rgb(0 0 0 / 10%) !default;
-$border-color-border: rgb(0 0 0 / 6%) !default;
+$border-color: #e6e6e6 !default;
+$border-color-layout: #e6e6e6 !default;
+$border-color-scrollbar: #d7d7d7 !default;
 
 $shadow-1:
   0 1px 3px rgb(0 0 0 / 10%),
@@ -83,12 +92,13 @@ $shadow-3:
   0 24px 48px -12px rgb(0 0 0 / 20%) !default;
 
 $accent-color: #0c62cd !default;
-$accent-contrast-color: #fbfdff !default;
+$accent-contrast-color: #fff !default;
 $accent-background-color: rgb(12 98 205 / 10%) !default;
 
-$dark-background-color-page: #171717 !default;
+$dark-background-color-body: #171717 !default;
 $dark-background-color-header: #171717 !default;
-$dark-background-color-sidebar: #1f1f1f !default;
+$dark-background-color-footer: #1f1f1f !default;
+$dark-background-color-sidebar: #171717 !default;
 $dark-background-color-inset: #1f1f1f !default;
 $dark-background-color-surface: #292929 !default;
 $dark-background-color-hover: rgb(255 255 255 / 8%) !default;
@@ -99,8 +109,9 @@ $dark-text-color: #ededed !default;
 $dark-text-color-secondary: #bdbdbd !default;
 $dark-text-color-placeholder: #9e9e9e !default;
 
-$dark-border-color-gutter: #000 !default;
-$dark-border-color-border: rgb(255 255 255 / 6%) !default;
+$dark-border-color: #3e3e3e !default;
+$dark-border-color-layout: #000 !default;
+$dark-border-color-scrollbar: #3e3e3e !default;
 
 $dark-shadow-1:
   0 1px 3px rgb(0 0 0 / 48%),
@@ -113,5 +124,5 @@ $dark-shadow-3:
   0 24px 48px -12px rgb(0 0 0 / 56%) !default;
 
 $dark-accent-color: #5c9eff !default;
-$dark-accent-contrast-color: #071424 !default;
+$dark-accent-contrast-color: #000 !default;
 $dark-accent-background-color: rgb(92 158 255 / 16%) !default;

@@ -8,6 +8,7 @@
       { "ignore": ["after-custom-property", "after-comment", "inside-single-line-block"] }
     ],
     "no-empty-source": null,
+    "property-no-vendor-prefix": null,
     "scss/dollar-variable-empty-line-before": null,
     "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }]
