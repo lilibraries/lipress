@@ -1,4 +1,4 @@
-import { useResizeObserver } from "@lilib/hooks";
+import { usePersist, useResizeObserver } from "@lilib/hooks";
 import cn from "classnames";
 import {
   type ReactNode,
@@ -45,12 +45,9 @@ function Segments<T extends string>(props: SegmentsProps<T>) {
   const itemsRef = useRef(new Map<string, HTMLButtonElement>());
   const [indicator, setIndicator] = useState<SegmentsIndicatorState | null>(null);
 
-  const select = useCallback(
-    (nextValue: string) => {
-      onChange(nextValue as T);
-    },
-    [onChange],
-  );
+  const select = usePersist((nextValue: string) => {
+    onChange(nextValue as T);
+  });
 
   const registerItem = useCallback((itemValue: string, element: HTMLButtonElement | null) => {
     if (element) {
