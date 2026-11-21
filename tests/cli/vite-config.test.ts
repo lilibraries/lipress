@@ -40,6 +40,7 @@ describe("createViteConfig", () => {
       "react-dom/client",
       "react/jsx-runtime",
       "react/jsx-dev-runtime",
+      "classnames",
     ]);
   });
 });

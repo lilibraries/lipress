@@ -1,0 +1,166 @@
+@use "../../styles/mixins" as *;
+
+.lipress-layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.lipress-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: var(--lipress-layout-header-height);
+  border-bottom: 1px solid var(--lipress-border-color-layout);
+  box-shadow: 0 -100vh 0 100vh var(--lipress-background-color-header);
+}
+
+.lipress-layout-header::before {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 1px;
+}
+
+.lipress-layout-header::after {
+  position: absolute;
+  inset: 1px 0 0;
+}
+
+.lipress-layout-header::before,
+.lipress-layout-header::after {
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-color: var(--lipress-background-color-header);
+
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    background-color: color-mix(in srgb, var(--lipress-background-color-header) 90%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+
+.lipress-layout-header-inner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  max-width: var(--lipress-layout-max-width);
+  height: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.lipress-layout-grid {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  max-width: var(--lipress-layout-max-width);
+  margin: 0 auto;
+}
+
+.lipress-layout-sidebar {
+  position: sticky;
+  top: var(--lipress-layout-header-height);
+  z-index: 20;
+  box-sizing: border-box;
+  flex: 0 0 var(--lipress-layout-sidebar-width);
+  width: var(--lipress-layout-sidebar-width);
+  height: calc(100dvh - var(--lipress-layout-header-height));
+  padding: 24px 12px;
+  overflow-y: auto;
+  background-color: var(--lipress-background-color-sidebar);
+  border-right: 1px solid var(--lipress-border-color-layout);
+  box-shadow: -100vw 0 0 100vw var(--lipress-background-color-sidebar);
+  clip-path: inset(0 0 0 -100vw);
+
+  @include mini-scrollbar;
+}
+
+.lipress-layout-toc {
+  position: sticky;
+  top: var(--lipress-layout-header-height);
+  z-index: 20;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 var(--lipress-layout-toc-width);
+  flex-direction: column;
+  width: var(--lipress-layout-toc-width);
+  max-height: calc(100dvh - var(--lipress-layout-header-height));
+  padding: 48px 24px 24px 0;
+  overflow-y: auto;
+
+  @include mini-scrollbar;
+}
+
+.lipress-layout-main {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.lipress-layout-main-content {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 48px;
+}
+
+.lipress-layout-main:only-child > .lipress-layout-main-content {
+  padding-left: 24px;
+}
+
+.lipress-layout-main:only-child > .lipress-layout-main-content:only-child {
+  padding-right: 24px;
+}
+
+.lipress-layout-footer {
+  position: relative;
+  z-index: 20;
+  flex: 0 0 auto;
+  background-color: var(--lipress-background-color-footer);
+  border-top: 1px solid var(--lipress-border-color-layout);
+  box-shadow: 0 100vh 0 100vh var(--lipress-background-color-footer);
+  transform: translateZ(0);
+}
+
+.lipress-layout-footer-inner {
+  box-sizing: border-box;
+  max-width: var(--lipress-layout-max-width);
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.lipress-layout-wide {
+  .lipress-layout-header-inner,
+  .lipress-layout-grid,
+  .lipress-layout-footer-inner {
+    max-width: var(--lipress-layout-wide-max-width);
+  }
+}
+
+.lipress-layout-full {
+  .lipress-layout-header-inner,
+  .lipress-layout-grid,
+  .lipress-layout-footer-inner {
+    max-width: none;
+  }
+}
+
+.lipress-layout-headerless {
+  .lipress-layout-sidebar {
+    top: 0;
+    height: 100dvh;
+  }
+
+  .lipress-layout-toc {
+    top: 0;
+    max-height: 100dvh;
+  }
+}
