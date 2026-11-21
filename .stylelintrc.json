@@ -3,10 +3,7 @@
   "ignoreFiles": ["!src/**", "build/**"],
   "rules": {
     "at-rule-empty-line-before": null,
-    "custom-property-empty-line-before": [
-      "always",
-      { "ignore": ["after-custom-property", "after-comment", "inside-single-line-block"] }
-    ],
+    "custom-property-empty-line-before": null,
     "no-empty-source": null,
     "property-no-vendor-prefix": null,
     "scss/dollar-variable-empty-line-before": null,

@@ -63,12 +63,22 @@ $letter-spacing-caption: 0.025em !default;
 $letter-spacing-heading-1: -0.02em !default;
 $letter-spacing-heading-2: -0.01em !default;
 
+$motion-duration-fast: 150ms !default;
+$motion-duration-base: 200ms !default;
+$motion-duration-slow: 250ms !default;
+
+$motion-easing-standard: cubic-bezier(0.2, 0, 0, 1) !default;
+$motion-easing-decelerate: cubic-bezier(0, 0, 0, 1) !default;
+$motion-easing-accelerate: cubic-bezier(0.3, 0, 1, 1) !default;
+
 $background-color-body: #fff !default;
 $background-color-header: #fff !default;
 $background-color-footer: #f7f7f7 !default;
 $background-color-sidebar: #fff !default;
 $background-color-inset: #f7f7f7 !default;
+$background-color-sunken: #ebebeb !default;
 $background-color-surface: #fff !default;
+$background-color-raised: #fff !default;
 $background-color-hover: rgb(0 0 0 / 8%) !default;
 $background-color-active: rgb(0 0 0 / 12%) !default;
 $background-color-backdrop: rgb(0 0 0 / 48%) !default;
@@ -100,7 +110,9 @@ $dark-background-color-header: #171717 !default;
 $dark-background-color-footer: #1f1f1f !default;
 $dark-background-color-sidebar: #171717 !default;
 $dark-background-color-inset: #1f1f1f !default;
+$dark-background-color-sunken: #2a2a2a !default;
 $dark-background-color-surface: #292929 !default;
+$dark-background-color-raised: #383838 !default;
 $dark-background-color-hover: rgb(255 255 255 / 8%) !default;
 $dark-background-color-active: rgb(255 255 255 / 12%) !default;
 $dark-background-color-backdrop: rgb(0 0 0 / 64%) !default;

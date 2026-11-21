@@ -50,6 +50,14 @@
   --lipress-letter-spacing-heading-1: #{$letter-spacing-heading-1};
   --lipress-letter-spacing-heading-2: #{$letter-spacing-heading-2};
 
+  --lipress-motion-duration-fast: #{$motion-duration-fast};
+  --lipress-motion-duration-base: #{$motion-duration-base};
+  --lipress-motion-duration-slow: #{$motion-duration-slow};
+
+  --lipress-motion-easing-standard: #{$motion-easing-standard};
+  --lipress-motion-easing-decelerate: #{$motion-easing-decelerate};
+  --lipress-motion-easing-accelerate: #{$motion-easing-accelerate};
+
   --lipress-icon-size-logo: #{$icon-size-logo};
   --lipress-icon-size-control: #{$icon-size-control};
 
@@ -58,7 +66,9 @@
   --lipress-background-color-footer: #{$background-color-footer};
   --lipress-background-color-sidebar: #{$background-color-sidebar};
   --lipress-background-color-inset: #{$background-color-inset};
+  --lipress-background-color-sunken: #{$background-color-sunken};
   --lipress-background-color-surface: #{$background-color-surface};
+  --lipress-background-color-raised: #{$background-color-raised};
   --lipress-background-color-hover: #{$background-color-hover};
   --lipress-background-color-active: #{$background-color-active};
   --lipress-background-color-backdrop: #{$background-color-backdrop};
@@ -88,7 +98,9 @@
   --lipress-background-color-footer: #{$dark-background-color-footer};
   --lipress-background-color-sidebar: #{$dark-background-color-sidebar};
   --lipress-background-color-inset: #{$dark-background-color-inset};
+  --lipress-background-color-sunken: #{$dark-background-color-sunken};
   --lipress-background-color-surface: #{$dark-background-color-surface};
+  --lipress-background-color-raised: #{$dark-background-color-raised};
   --lipress-background-color-hover: #{$dark-background-color-hover};
   --lipress-background-color-active: #{$dark-background-color-active};
   --lipress-background-color-backdrop: #{$dark-background-color-backdrop};
