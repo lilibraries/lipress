@@ -1,0 +1,37 @@
+.lipress-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  font-size: var(--lipress-font-size-brand);
+  font-weight: var(--lipress-font-weight-brand);
+  line-height: var(--lipress-line-height-brand);
+  color: var(--lipress-text-color);
+  letter-spacing: var(--lipress-letter-spacing-brand);
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--lipress-accent-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.lipress-brand-logo {
+  display: flex;
+  flex: none;
+  min-width: 1em;
+  font-size: var(--lipress-icon-size-logo);
+}
+
+.lipress-brand-logo img,
+.lipress-brand-logo svg {
+  width: auto;
+  height: 1em;
+}
+
+.lipress-brand-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
