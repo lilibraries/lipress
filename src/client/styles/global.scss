@@ -124,6 +124,23 @@
   --lipress-accent-background-color: #{$dark-accent-background-color};
 }
 
+:root {
+  scroll-padding-top: 16px;
+
+  &:has(.lipress-layout-header) {
+    scroll-padding-top: calc(var(--lipress-layout-header-height) + 16px);
+  }
+}
+
+:root.lipress-theme-switching {
+  &,
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
 body {
   margin: 0;
   overflow-y: scroll;
@@ -134,13 +151,4 @@ body {
   color: var(--lipress-text-color);
   background-color: var(--lipress-background-color-body);
   -webkit-font-smoothing: antialiased;
-}
-
-:root.lipress-theme-switching {
-  &,
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
 }

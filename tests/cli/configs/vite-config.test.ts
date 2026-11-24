@@ -2,7 +2,7 @@
 import { describe, expect, it } from "@jest/globals";
 import type { Plugin } from "vite";
 
-import { createViteConfig } from "../../src/cli/configs/vite-config";
+import { createViteConfig } from "../../../src/cli/configs/vite-config";
 
 const ROOT = "/site";
 const CLIENT_DIR = "/site/node_modules/@lilib/lipress/dist/client";
@@ -42,6 +42,7 @@ describe("createViteConfig", () => {
       "react/jsx-dev-runtime",
       "@lilib/hooks",
       "classnames",
+      "react-router-dom",
     ]);
   });
 });

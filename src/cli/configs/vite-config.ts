@@ -45,6 +45,7 @@ export function createViteConfig({ root, clientDir }: ViteConfigOptions): Inline
         "react/jsx-dev-runtime",
         "@lilib/hooks",
         "classnames",
+        "react-router-dom",
       ],
     },
   };

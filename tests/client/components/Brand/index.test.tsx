@@ -1,8 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 
-import Brand from "../../../src/client/components/Brand";
-import ThemeProvider from "../../../src/client/providers/ThemeProvider";
+import Brand from "../../../../src/client/components/Brand";
+import ThemeProvider from "../../../../src/client/providers/ThemeProvider";
 
 describe("Brand", () => {
   it("renders without throwing", () => {

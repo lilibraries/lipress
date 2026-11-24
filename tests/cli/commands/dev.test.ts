@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 import { createServer, type ViteDevServer } from "vite";
 
-import { dev } from "../../src/cli/commands/dev";
+import { dev } from "../../../src/cli/commands/dev";
 
 jest.mock("vite", () => ({ createServer: jest.fn() }));
 

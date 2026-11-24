@@ -1,0 +1,115 @@
+@use "../../styles/mixins" as *;
+
+.lipress-toc {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.lipress-toc-header {
+  display: flex;
+  flex: none;
+  gap: 8px;
+  align-items: center;
+  padding: 0 0 12px;
+  font-size: var(--lipress-font-size-caption);
+  font-weight: var(--lipress-font-weight-caption);
+  line-height: var(--lipress-line-height-caption);
+  color: var(--lipress-text-color-placeholder);
+  letter-spacing: var(--lipress-letter-spacing-caption);
+}
+
+.lipress-toc-header-icon {
+  flex: none;
+  width: calc(1em + 2px);
+  height: calc(1em + 2px);
+  margin-left: -2px;
+}
+
+.lipress-toc-body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 1px;
+    content: "";
+    background-color: var(--lipress-border-color);
+  }
+}
+
+.lipress-toc-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  pointer-events: none;
+  background-color: var(--lipress-accent-color);
+  border-radius: 999px;
+  transition: transform var(--lipress-motion-duration-base) var(--lipress-motion-easing-standard);
+}
+
+.lipress-toc-indicator-scrolling {
+  transition: none;
+}
+
+.lipress-toc-list {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+
+  @include mini-scrollbar;
+}
+
+.lipress-toc-item {
+  display: block;
+  padding: 4px 0 4px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--lipress-font-size-toc);
+  line-height: var(--lipress-line-height-toc);
+  color: var(--lipress-text-color-secondary);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--lipress-motion-duration-fast) var(--lipress-motion-easing-standard);
+
+  &:hover {
+    color: var(--lipress-text-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lipress-accent-color);
+    outline-offset: -2px;
+  }
+}
+
+.lipress-toc-item-depth-3,
+.lipress-toc-item-depth-4,
+.lipress-toc-item-depth-5,
+.lipress-toc-item-depth-6 {
+  font-size: calc(var(--lipress-font-size-toc) - 1px);
+}
+
+@for $depth from 3 through 6 {
+  .lipress-toc-item-depth-#{$depth} {
+    padding-left: calc(
+      20px + var(--lipress-font-size-toc) + #{($depth - 3)} * (var(--lipress-font-size-toc) - 1px)
+    );
+  }
+}
+
+.lipress-toc-item-active,
+.lipress-toc-item-active:hover {
+  font-weight: var(--lipress-font-weight-nav-active);
+  color: var(--lipress-accent-color);
+}

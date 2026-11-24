@@ -4,7 +4,7 @@ Lipress is an out-of-the-box documentation tool built on Vite: point it at a doc
 
 ## Commands
 
-- `pnpm test` runs Jest; append a path to narrow it (e.g. `pnpm test tests/cli/dev.test.ts`).
+- `pnpm test` runs Jest; append a path to narrow it (e.g. `pnpm test tests/cli/commands/dev.test.ts`).
 - `pnpm lint` runs `tsc`, ESLint, Stylelint, and a Prettier check with zero warnings allowed; `pnpm lint:fix` fixes what it can.
 - `pnpm dist` builds the published package into `dist/` (TypeScript for `src/cli`, `src/shared`, and `src/index.ts`, plus copied client sources). There is no site build yet: `pnpm dev` is the only way to serve a documentation project.
 - `pnpm dev` rebuilds `dist/` and restarts the dev server when `src/` changes. The CLI always runs from `dist/` and serves `dist/client`, so invoking `node bin/lipress.mjs` directly uses a stale build unless `pnpm dist` ran first.
@@ -43,7 +43,9 @@ Lipress is an out-of-the-box documentation tool built on Vite: point it at a doc
 ## Testing
 
 - Tests are not colocated: `tests/cli` and `tests/client` mirror their source areas, and Jest collects `tests/**/*.test.(ts|tsx)` in `jsdom` by default.
-- Components under `src/client` (including `Root`) get only a simple rendering smoke test that verifies they render; do not add complex interaction, style, lifecycle, edge-case, or prop-combination tests. This limit does not apply to non-component logic such as entry initialization and utility functions.
+- Components under `src/client` (including `Root`) get at most a simple rendering smoke test that verifies they render; do not add complex interaction, style, lifecycle, edge-case, or prop-combination tests. This limit does not apply to non-component logic such as entry initialization and utility functions.
+- Write that smoke test only when the component meets at least one of these criteria: it reads `window`, `document`, storage, or another browser-only API while rendering or branches on the environment; it derives rendered content through defaults, fallbacks, or conditional branches instead of only selecting class names; code outside it depends on the structure it emits, such as `useScrollSpy`, the TOC, or routing; or it owns accessibility semantics that change with state, such as `aria-current`, `aria-pressed`, or an `aria-label` fallback.
+- Pure presentational leaf components, such as icons, dividers, and style wrappers that only compose slots and class names, need no test at all. Never add a rendering test to raise coverage.
 - Tests for lifecycle-dependent behavior must cover cleanup on unmount and StrictMode idempotency, except the component tests under `src/client`, which still only verify normal rendering.
 - Test SSR-specific behavior in a Node environment, explicitly selected with `/** @jest-environment node */` unless the test configuration already selects it.
 - Do not suppress unhandled promise rejections without a specific, justified reason.

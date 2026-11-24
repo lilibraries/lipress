@@ -3,3 +3,5 @@ allowBuilds:
   core-js-pure: false
   esbuild: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - "@lilib/hooks@2.5.0"

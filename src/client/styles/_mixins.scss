@@ -7,15 +7,15 @@
     scrollbar-width: auto;
 
     &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: var(--lipress-border-color-scrollbar);
       background-clip: padding-box;
       border: 2px solid transparent;
-      border-radius: 5px;
+      border-radius: 4px;
     }
 
     &::-webkit-scrollbar-track,

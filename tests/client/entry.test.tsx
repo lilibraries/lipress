@@ -13,6 +13,8 @@ describe("entry", () => {
     mockCreateRoot.mockClear();
     mockRender.mockClear();
     document.body.innerHTML = "";
+    window.history.replaceState(null, "", "/");
+    history.scrollRestoration = "auto";
   });
 
   it("renders the root component into the root container", async () => {
@@ -21,12 +23,31 @@ describe("entry", () => {
     document.body.append(container);
 
     await import("../../src/client/entry");
-    // The entry loads a fresh module after `resetModules`, so its root component is too.
-    const { default: Root } = await import("../../src/client/root");
+    // The entry loads a fresh module after `resetModules`, so its dependencies are too.
+    const [{ default: Root }, { BrowserRouter }] = await Promise.all([
+      import("../../src/client/root"),
+      import("react-router-dom"),
+    ]);
 
     expect(mockCreateRoot.mock.calls[0]?.[0]).toBe(container);
     expect(mockRender).toHaveBeenCalledTimes(1);
-    expect(mockRender.mock.calls[0]?.[0]).toEqual(<Root />);
+    expect(mockRender.mock.calls[0]?.[0]).toEqual(
+      <BrowserRouter>
+        <Root />
+      </BrowserRouter>,
+    );
+    expect(history.scrollRestoration).toBe("auto");
+  });
+
+  it("takes over scroll restoration when the url has a hash", async () => {
+    const container = document.createElement("div");
+    container.id = "root";
+    document.body.append(container);
+    window.history.replaceState(null, "", "/#section");
+
+    await import("../../src/client/entry");
+
+    expect(history.scrollRestoration).toBe("manual");
   });
 
   it("throws when the root container is missing", async () => {

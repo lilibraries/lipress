@@ -1,7 +1,7 @@
 import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 
-import Segments from "../../../src/client/components/Segments";
+import Segments from "../../../../src/client/components/Segments";
 
 describe("Segments", () => {
   it("renders without throwing", () => {

@@ -4,7 +4,7 @@ import { mkdtemp, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
-import assertReactPeers from "../../src/cli/utils/assertReactPeers";
+import assertReactPeers from "../../../src/cli/utils/assertReactPeers";
 
 describe("assertReactPeers", () => {
   it("accepts a project that provides the react peers", () => {

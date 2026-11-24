@@ -7,9 +7,9 @@ import os from "node:os";
 import path from "node:path";
 import type { Connect, ResolvedConfig, ViteDevServer } from "vite";
 
-import clientPlugin from "../../src/cli/plugins/vite-plugin-client";
+import clientPlugin from "../../../src/cli/plugins/vite-plugin-client";
 
-const CLIENT_DIR = path.resolve(__dirname, "../../src/client");
+const CLIENT_DIR = path.resolve(__dirname, "../../../src/client");
 const ENTRY_URL = `/@fs${realpathSync(path.join(CLIENT_DIR, "entry.tsx"))}`;
 
 interface FakeServer {

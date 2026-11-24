@@ -2,7 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import type { ComponentPropsWithoutRef } from "react";
 
-import Menu from "../../../src/client/components/Menu";
+import Menu from "../../../../src/client/components/Menu";
 
 function StubLink({ to, ...rest }: { to: string } & ComponentPropsWithoutRef<"a">) {
   return <a href={to} {...rest} />;

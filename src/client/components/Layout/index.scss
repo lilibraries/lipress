@@ -93,10 +93,8 @@
   flex-direction: column;
   width: var(--lipress-layout-toc-width);
   max-height: calc(100dvh - var(--lipress-layout-header-height));
-  padding: 48px 24px 24px 0;
-  overflow-y: auto;
-
-  @include mini-scrollbar;
+  padding: 48px 24px 0 0;
+  overflow: hidden;
 }
 
 .lipress-layout-main {
